@@ -1,0 +1,123 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to SolaXCloud",
+        "description": "Enter the credentials from your application in the [SolaX Developer Portal](https://developer.solaxcloud.com/).",
+        "data": {
+          "base_url": "API Base URL",
+          "client_id": "Client ID",
+          "client_secret": "Client Secret"
+        },
+        "data_description": {
+          "base_url": "Root URL of the SolaXCloud OpenAPI (e.g. https://openapi-eu.solaxcloud.com).",
+          "client_id": "The OAuth2 Client ID from your developer application.",
+          "client_secret": "The OAuth2 Client Secret from your developer application."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate SolaXCloud",
+        "description": "The credentials for **{client_id}** at `{base_url}` are no longer valid. Enter a new Client Secret to restore the connection.",
+        "data": {
+          "client_secret": "Client Secret"
+        },
+        "data_description": {
+          "client_secret": "The new OAuth2 Client Secret from your developer application."
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure SolaXCloud",
+        "description": "Update the connection settings for this SolaXCloud integration.",
+        "data": {
+          "base_url": "API Base URL",
+          "client_id": "Client ID",
+          "client_secret": "Client Secret"
+        },
+        "data_description": {
+          "base_url": "Root URL of the SolaXCloud OpenAPI (e.g. https://openapi-eu.solaxcloud.com).",
+          "client_id": "The OAuth2 Client ID from your developer application.",
+          "client_secret": "The OAuth2 Client Secret from your developer application."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the SolaXCloud API. Check the Base URL and your network connection.",
+      "invalid_auth": "Invalid credentials. Verify your Client ID and Client Secret in the SolaX Developer Portal.",
+      "unknown": "An unexpected error occurred. Check the Home Assistant logs for details."
+    },
+    "abort": {
+      "already_configured": "This SolaXCloud application (Client ID) is already configured.",
+      "reauth_successful": "Re-authentication was successful.",
+      "reconfigure_successful": "The configuration has been updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "SolaXCloud Options",
+        "data": {
+          "scan_interval": "Query interval"
+        },
+        "data_description": {
+          "scan_interval": "How often (in seconds) to poll the SolaXCloud API for updated data. Minimum: 10 s."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "grid_power": { "name": "Grid Power" },
+      "today_import_energy": { "name": "Today Import Energy" },
+      "total_import_energy": { "name": "Total Import Energy" },
+      "today_export_energy": { "name": "Today Export Energy" },
+      "total_export_energy": { "name": "Total Export Energy" },
+      "ac_voltage1": { "name": "AC Voltage L1" },
+      "ac_voltage2": { "name": "AC Voltage L2" },
+      "ac_voltage3": { "name": "AC Voltage L3" },
+      "ac_current1": { "name": "AC Current L1" },
+      "ac_current2": { "name": "AC Current L2" },
+      "ac_current3": { "name": "AC Current L3" },
+      "ac_power1": { "name": "AC Power L1" },
+      "ac_power2": { "name": "AC Power L2" },
+      "ac_power3": { "name": "AC Power L3" },
+      "ac_frequency1": { "name": "AC Frequency L1" },
+      "ac_frequency2": { "name": "AC Frequency L2" },
+      "ac_frequency3": { "name": "AC Frequency L3" },
+      "total_power_factor": { "name": "Total Power Factor" },
+      "inverter_temperature": { "name": "Inverter Temperature" },
+      "daily_ac_output": { "name": "Daily AC Output" },
+      "total_ac_output": { "name": "Total AC Output" },
+      "daily_yield": { "name": "Daily Yield" },
+      "total_yield": { "name": "Total Yield" },
+      "mppt1_voltage": { "name": "MPPT 1 Voltage" },
+      "mppt1_current": { "name": "MPPT 1 Current" },
+      "mppt1_power": { "name": "MPPT 1 Power" },
+      "mppt2_voltage": { "name": "MPPT 2 Voltage" },
+      "mppt2_current": { "name": "MPPT 2 Current" },
+      "mppt2_power": { "name": "MPPT 2 Power" },
+      "battery_soc": { "name": "Battery State of Charge" },
+      "battery_soh": { "name": "Battery State of Health" },
+      "charge_discharge_power": { "name": "Charge/Discharge Power" },
+      "battery_voltage": { "name": "Battery Voltage" },
+      "battery_current": { "name": "Battery Current" },
+      "battery_temperature": { "name": "Battery Temperature" },
+      "battery_cycle_times": { "name": "Battery Cycle Count" },
+      "total_device_discharge": { "name": "Total Battery Discharge" },
+      "total_device_charge": { "name": "Total Battery Charge" },
+      "battery_remainings": { "name": "Battery Remaining Capacity" },
+      "last_data_update": { "name": "Last Data Update" },
+      "plant_daily_yield": { "name": "Plant Daily Yield" },
+      "plant_total_yield": { "name": "Plant Total Yield" },
+      "plant_daily_charged": { "name": "Plant Daily Battery Charged" },
+      "plant_total_charged": { "name": "Plant Total Battery Charged" },
+      "plant_daily_discharged": { "name": "Plant Daily Battery Discharged" },
+      "plant_total_discharged": { "name": "Plant Total Battery Discharged" },
+      "plant_daily_imported": { "name": "Plant Daily Grid Import" },
+      "plant_total_imported": { "name": "Plant Total Grid Import" },
+      "plant_daily_exported": { "name": "Plant Daily Grid Export" },
+      "plant_total_exported": { "name": "Plant Total Grid Export" },
+      "plant_daily_earnings": { "name": "Plant Daily Earnings" },
+      "plant_total_earnings": { "name": "Plant Total Earnings" }
+    }
+  }
+}

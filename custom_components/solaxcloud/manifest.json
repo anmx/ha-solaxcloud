@@ -1,0 +1,13 @@
+{
+  "domain": "solaxcloud",
+  "name": "SolaXCloud",
+  "codeowners": ["@anmx"],
+  "config_flow": true,
+  "documentation": "https://github.com/anmx/ha-solaxcloud",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/anmx/ha-solaxcloud/issues",
+  "quality_scale": "Custom",
+  "requirements": [],
+  "version": "0.1.0"
+}

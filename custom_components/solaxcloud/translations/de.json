@@ -1,0 +1,123 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Mit SolaXCloud verbinden",
+        "description": "Gib die Zugangsdaten deiner Anwendung aus dem [SolaX Developer Portal](https://developer.solaxcloud.com/) ein.",
+        "data": {
+          "base_url": "API-Basis-URL",
+          "client_id": "Client-ID",
+          "client_secret": "Client-Secret"
+        },
+        "data_description": {
+          "base_url": "Basis-URL der SolaXCloud OpenAPI (z. B. https://openapi-eu.solaxcloud.com).",
+          "client_id": "Die OAuth2-Client-ID deiner Entwickleranwendung.",
+          "client_secret": "Das OAuth2-Client-Secret deiner Entwickleranwendung."
+        }
+      },
+      "reauth_confirm": {
+        "title": "SolaXCloud erneut authentifizieren",
+        "description": "Die Zugangsdaten für **{client_id}** unter `{base_url}` sind nicht mehr gültig. Gib ein neues Client-Secret ein, um die Verbindung wiederherzustellen.",
+        "data": {
+          "client_secret": "Client-Secret"
+        },
+        "data_description": {
+          "client_secret": "Das neue OAuth2-Client-Secret deiner Entwickleranwendung."
+        }
+      },
+      "reconfigure": {
+        "title": "SolaXCloud neu konfigurieren",
+        "description": "Verbindungseinstellungen dieser SolaXCloud-Integration aktualisieren.",
+        "data": {
+          "base_url": "API-Basis-URL",
+          "client_id": "Client-ID",
+          "client_secret": "Client-Secret"
+        },
+        "data_description": {
+          "base_url": "Basis-URL der SolaXCloud OpenAPI (z. B. https://openapi-eu.solaxcloud.com).",
+          "client_id": "Die OAuth2-Client-ID deiner Entwickleranwendung.",
+          "client_secret": "Das OAuth2-Client-Secret deiner Entwickleranwendung."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zur SolaXCloud-API fehlgeschlagen. Bitte Basis-URL und Netzwerkverbindung prüfen.",
+      "invalid_auth": "Ungültige Zugangsdaten. Bitte Client-ID und Client-Secret im SolaX Developer Portal überprüfen.",
+      "unknown": "Ein unerwarteter Fehler ist aufgetreten. Weitere Details sind in den Home-Assistant-Protokollen zu finden."
+    },
+    "abort": {
+      "already_configured": "Diese SolaXCloud-Anwendung (Client-ID) ist bereits konfiguriert.",
+      "reauth_successful": "Erneute Authentifizierung erfolgreich.",
+      "reconfigure_successful": "Die Konfiguration wurde aktualisiert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "SolaXCloud-Optionen",
+        "data": {
+          "scan_interval": "Abfrageintervall"
+        },
+        "data_description": {
+          "scan_interval": "Wie oft (in Sekunden) die SolaXCloud-API nach aktualisierten Daten abgefragt wird. Minimum: 10 s."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "grid_power": { "name": "Netzleistung" },
+      "today_import_energy": { "name": "Heutige Netzbezugsenergie" },
+      "total_import_energy": { "name": "Gesamte Netzbezugsenergie" },
+      "today_export_energy": { "name": "Heutige Netzeinspeisung" },
+      "total_export_energy": { "name": "Gesamte Netzeinspeisung" },
+      "ac_voltage1": { "name": "AC-Spannung L1" },
+      "ac_voltage2": { "name": "AC-Spannung L2" },
+      "ac_voltage3": { "name": "AC-Spannung L3" },
+      "ac_current1": { "name": "AC-Strom L1" },
+      "ac_current2": { "name": "AC-Strom L2" },
+      "ac_current3": { "name": "AC-Strom L3" },
+      "ac_power1": { "name": "AC-Leistung L1" },
+      "ac_power2": { "name": "AC-Leistung L2" },
+      "ac_power3": { "name": "AC-Leistung L3" },
+      "ac_frequency1": { "name": "AC-Frequenz L1" },
+      "ac_frequency2": { "name": "AC-Frequenz L2" },
+      "ac_frequency3": { "name": "AC-Frequenz L3" },
+      "total_power_factor": { "name": "Gesamter Leistungsfaktor" },
+      "inverter_temperature": { "name": "Wechselrichtertemperatur" },
+      "daily_ac_output": { "name": "Tägliche AC-Ausgabe" },
+      "total_ac_output": { "name": "Gesamte AC-Ausgabe" },
+      "daily_yield": { "name": "Tagesertrag" },
+      "total_yield": { "name": "Gesamtertrag" },
+      "mppt1_voltage": { "name": "MPPT 1 Spannung" },
+      "mppt1_current": { "name": "MPPT 1 Strom" },
+      "mppt1_power": { "name": "MPPT 1 Leistung" },
+      "mppt2_voltage": { "name": "MPPT 2 Spannung" },
+      "mppt2_current": { "name": "MPPT 2 Strom" },
+      "mppt2_power": { "name": "MPPT 2 Leistung" },
+      "battery_soc": { "name": "Batterieladezustand" },
+      "battery_soh": { "name": "Batteriegesundheitszustand" },
+      "charge_discharge_power": { "name": "Lade-/Entladeleistung" },
+      "battery_voltage": { "name": "Batteriespannung" },
+      "battery_current": { "name": "Batteriestrom" },
+      "battery_temperature": { "name": "Batterietemperatur" },
+      "battery_cycle_times": { "name": "Batterieladezyklen" },
+      "total_device_discharge": { "name": "Gesamte Batterieentladung" },
+      "total_device_charge": { "name": "Gesamte Batterieladung" },
+      "battery_remainings": { "name": "Verbleibende Batteriekapazität" },
+      "last_data_update": { "name": "Letzte Datenaktualisierung" },
+      "plant_daily_yield": { "name": "Anlage Tagesertrag" },
+      "plant_total_yield": { "name": "Anlage Gesamtertrag" },
+      "plant_daily_charged": { "name": "Anlage Tägliche Batterieladung" },
+      "plant_total_charged": { "name": "Anlage Gesamte Batterieladung" },
+      "plant_daily_discharged": { "name": "Anlage Tägliche Batterieentladung" },
+      "plant_total_discharged": { "name": "Anlage Gesamte Batterieentladung" },
+      "plant_daily_imported": { "name": "Anlage Täglicher Netzbezug" },
+      "plant_total_imported": { "name": "Anlage Gesamter Netzbezug" },
+      "plant_daily_exported": { "name": "Anlage Tägliche Netzeinspeisung" },
+      "plant_total_exported": { "name": "Anlage Gesamte Netzeinspeisung" },
+      "plant_daily_earnings": { "name": "Anlage Tagesverdienst" },
+      "plant_total_earnings": { "name": "Anlage Gesamtverdienst" }
+    }
+  }
+}
